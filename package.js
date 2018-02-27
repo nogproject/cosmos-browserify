@@ -9,7 +9,7 @@ Package.describe({
 Package.registerBuildPlugin({
   name: "CosmosBrowserify",
   // need 'meteor' for Npm and Meteor.wrapAsync
-  use: ['caching-compiler@1.0.0', 'coffeescript@1.0.11', 'meteor', 'underscore@1.0.4'],
+  use: ['caching-compiler@1.0.0', 'coffeescript@1.0.11 || 2.0.0', 'meteor', 'underscore@1.0.4'],
   sources: ['plugin/browserify.coffee'],
   npmDependencies: {
     "browserify": "12.0.1"         // primary tool which actually does the browserify
@@ -46,7 +46,7 @@ Package.onTest(function(api) {
 
   api.use([
     'tinytest',
-    'coffeescript',
+    'coffeescript@1.0.1 || 2.0.0',
     'underscore' ,
     'cosmos:browserify'
   ], 'server');
